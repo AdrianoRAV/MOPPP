@@ -17,7 +17,7 @@ def main(page: ft.Page):
     observation = ft.Ref[ft.TextField]()
 
     # Lista de células e perguntas
-    cells = ['Célula 1', 'Célula 2', 'Célula 3', 'Célula 4', 'Célula 5', 'Célula 6', 'Célula 7', 'Célula 8', 'Célula 9', 'Célula 10', 'Célula 11', 'Célula 12', 'Célula 13']
+    cells = ['PRÉ ABERTURA - ABERTURA - C1', 'TRIAGEM MANUAL MENSAGENS - C2', 'TRIAGEM AUTOMATIZADA MENSAGENS - C3', 'CONSOLIDAÇÃO C4', 'ERM OE - C5', 'INDUÇÃO PO SUL - C6', 'INDUÇÃO PO NORTE - C7', 'ALA LESTE PO - C8', 'ALA OESTE PO - C9', 'TRATAMENTO MANUAL SEDEX -  RECONDICIONAMENTO - C10', 'INDUÇÃO GO - ABERTURA DE MALAS - C11', 'ALA D - C12', 'ALA B_C - C13']
     # Lista de perguntas
     perguntas_celula = [
         "A carga é movimentada conforme previsto?",
@@ -54,19 +54,23 @@ def main(page: ft.Page):
         'É efetuada a postagem dos objetos coletados/recebidos, conforme definido? (PREPOSTO)',
         ]
     perguntas = {
-        'Célula 1': [perguntas_celula[0], perguntas_celula[1]],  # Referencia as perguntas 1 e 2
-        'Célula 2': [perguntas_celula[0], perguntas_celula[1], perguntas_celula[2]],  # Referencia as perguntas 1, 2 e 3
-        'Célula 3': [perguntas_celula[1], perguntas_celula[3]],  # Referencia as perguntas 2 e 4
-        'Célula 4': perguntas_celula,
-        'Célula 5': perguntas_celula,
-        'Célula 6': [perguntas_celula[0], perguntas_celula[1], perguntas_celula[2], perguntas_celula[3]],
-        'Célula 7': perguntas_celula,
-        'Célula 8': perguntas_celula,
-        'Célula 9': perguntas_celula,  # Referencia todas as perguntas
-        'Célula 10': perguntas_celula,  # Referencia todas as perguntas
-        'Célula 11': perguntas_celula,  # Referencia todas as perguntas
-        'Célula 12': perguntas_celula,  # Referencia todas as perguntas
-        'Célula 13': perguntas_celula,  # Referencia todas as perguntas
+        'PRÉ ABERTURA - ABERTURA - C1': [perguntas_celula[0], perguntas_celula[1]],  # Referencia as perguntas 1 e 2
+        'TRIAGEM MANUAL MENSAGENS - C2': [perguntas_celula[0], perguntas_celula[1], perguntas_celula[2]],  # Referencia as perguntas 1, 2 e 3
+        'TRIAGEM AUTOMATIZADA MENSAGENS - C3': [perguntas_celula[1], perguntas_celula[3]],  # Referencia as perguntas 2 e 4
+        'CONSOLIDAÇÃO C4': perguntas_celula,
+        'ERM OE - C5': perguntas_celula,
+        'INDUÇÃO PO SUL - C6': [perguntas_celula[0], perguntas_celula[1], perguntas_celula[2], perguntas_celula[3]],
+        'INDUÇÃO PO NORTE - C7': perguntas_celula,
+        'ALA LESTE PO - C8': perguntas_celula,
+        'ALA OESTE PO - C9': perguntas_celula,  # Referencia todas as perguntas
+        'TRATAMENTO MANUAL SEDEX -  RECONDICIONAMENTO - C10': perguntas_celula,  # Referencia todas as perguntas
+        'INDUÇÃO GO - ABERTURA DE MALAS - C11': perguntas_celula,  # Referencia todas as perguntas
+        'ALA D - C12': perguntas_celula,  # Referencia todas as perguntas
+        'ALA B_C - C13': perguntas_celula,  # Referencia todas as perguntas
+        'ALA A - C14': perguntas_celula,  # Referencia todas as perguntas
+        'SALA DE CONTROLE  - C15': perguntas_celula,  # Referencia todas as perguntas
+        'ENTREPOSTO NORTE - CÉLULA 17': perguntas_celula,  # Referencia todas as perguntas
+        'GCCAP - C18': perguntas_celula,  # Referencia todas as perguntas
     }
 
     # Função para enviar o formulário
@@ -122,7 +126,7 @@ def main(page: ft.Page):
     selected_cell = ft.Dropdown(
         label="Selecione a célula",
         options=[ft.dropdown.Option(cell) for cell in cells],
-        value="Célula 1",  # Define a célula 1 como padrão
+        value="PRÉ ABERTURA - ABERTURA - C1",  # Define a célula 1 como padrão
         on_change=update_tabs
     )
 
@@ -143,5 +147,3 @@ def main(page: ft.Page):
     update_tabs(None)
 
 ft.app(target=main)
-
-
